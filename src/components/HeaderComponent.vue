@@ -84,9 +84,6 @@ nav a:first-of-type {
 	.page-header {
 		padding: 8px;
 	}
-	nav {
-		font-size: 14px;
-	}
 }
 
 @media (max-width: 360px) {
@@ -95,7 +92,7 @@ nav a:first-of-type {
 	}
 	nav {
 		min-width: 220px;
-		font-size: 12px;
+		font-size: 14px;
 	}
 }
 </style>

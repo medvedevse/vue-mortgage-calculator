@@ -47,4 +47,10 @@ const handleDownloadSchedule = async () => {
 	background-color: aliceblue;
 	border-radius: 6px;
 }
+
+@media (max-width: 360px) {
+	.download-button {
+		font-size: 14px;
+	}
+}
 </style>

@@ -234,4 +234,10 @@ input[type='range']:hover {
 		min-width: 300px;
 	}
 }
+
+@media (max-width: 360px) {
+	.mortgage-form {
+		font-size: 14px;
+	}
+}
 </style>

@@ -142,4 +142,10 @@ const taxDeduction = computed<number>(() => {
 		min-height: 304px;
 	}
 }
+
+@media (max-width: 360px) {
+	.mortgage-description {
+		font-size: 16px;
+	}
+}
 </style>

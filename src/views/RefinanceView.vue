@@ -86,13 +86,10 @@ section:not(:last-child) {
 .refinance-calculator {
 	min-width: 250px;
 	width: 50%;
-	// margin-right: 50px;
 	border-right: 1px solid #d6d9e0;
 }
 
 .refinance-description {
-	// max-width: 50%;
-	// padding-left: 50px;
 	font-size: 18px;
 	display: grid;
 	grid-template-columns: repeat(2, 200px);
