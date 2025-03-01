@@ -1,22 +1,25 @@
 <template>
 	<div class="form-input">
-		<input type="text" :name="nameProps" :id="idProps" v-model="modelProps" />
+		<input type="text" :name="nameProps" :id="idProps" v-model="modelValue" />
 		<label :for="forProps">{{ labelNameProps }}</label>
 	</div>
 </template>
 
 <script setup lang="ts">
 import type { IInputComponentEmits, IInputComponentProps } from '@/types/componentTypes';
-import { defineComponent, toRefs, watch } from 'vue';
+import { defineComponent, toRefs, watch, ref } from 'vue';
 
 defineComponent({ name: 'InputComponent' });
 
 const props = defineProps<IInputComponentProps>();
 const { modelProps } = toRefs(props);
 
+const modelValue = ref<number>(modelProps.value);
+
 const emits = defineEmits<IInputComponentEmits>();
 
-watch(modelProps, (newValue) => emits('inputEmit', newValue), { immediate: true });
+watch(modelProps, (newValue) => modelValue.value = newValue, { immediate: true } )
+watch(modelValue, (newValue) => emits('inputEmit', newValue), { immediate: true });
 </script>
 
 <style scoped lang="scss">
