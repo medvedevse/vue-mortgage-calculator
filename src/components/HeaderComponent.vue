@@ -19,11 +19,11 @@
 </template>
 
 <script setup lang="ts">
-import { useThemeStore } from '@/stores/theme'
-import { RouterLink } from 'vue-router'
+import { useThemeStore } from '@/stores/theme';
+import { RouterLink } from 'vue-router';
 
-const themeStore = useThemeStore()
-const { changeTheme } = themeStore
+const themeStore = useThemeStore();
+const { changeTheme } = themeStore;
 </script>
 
 <style scoped lang="scss">

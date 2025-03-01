@@ -7,12 +7,12 @@
 </template>
 
 <script setup lang="ts">
-import type { IFooterComponentProps } from '@/types/componentTypes'
-import { defineComponent } from 'vue'
+import type { IFooterComponentProps } from '@/types/componentTypes';
+import { defineComponent } from 'vue';
 
-defineComponent({ name: 'FooterComponent' })
+defineComponent({ name: 'FooterComponent' });
 
-defineProps<IFooterComponentProps>()
+defineProps<IFooterComponentProps>();
 </script>
 
 <style scoped lang="scss">

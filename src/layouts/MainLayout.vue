@@ -8,15 +8,15 @@
 </template>
 
 <script setup lang="ts">
-import HeaderComponent from '@/components/HeaderComponent.vue'
-import { useThemeStore } from '@/stores/theme'
-import { storeToRefs } from 'pinia'
-import { ref, watch } from 'vue'
+import HeaderComponent from '@/components/HeaderComponent.vue';
+import { useThemeStore } from '@/stores/theme';
+import { storeToRefs } from 'pinia';
+import { ref, watch } from 'vue';
 
-const themeStore = useThemeStore()
-const { theme } = storeToRefs(themeStore)
-const themeClass = ref<'light' | 'dark'>('light')
-watch(theme, (newVal) => (themeClass.value = newVal), { immediate: true })
+const themeStore = useThemeStore();
+const { theme } = storeToRefs(themeStore);
+const themeClass = ref<'light' | 'dark'>('light');
+watch(theme, (newVal) => (themeClass.value = newVal), { immediate: true });
 </script>
 
 <style scoped lang="scss">

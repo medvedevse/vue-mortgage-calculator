@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import PressButton from './PressButton.vue'
-import { useMortgageStore } from '../stores/mortgage'
-import { storeToRefs } from 'pinia'
+import PressButton from './PressButton.vue';
+import { useMortgageStore } from '../stores/mortgage';
+import { storeToRefs } from 'pinia';
 
-const { setActiveTab } = useMortgageStore()
-const { activeTab } = storeToRefs(useMortgageStore())
+const { setActiveTab } = useMortgageStore();
+const { activeTab } = storeToRefs(useMortgageStore());
 </script>
 
 <template>

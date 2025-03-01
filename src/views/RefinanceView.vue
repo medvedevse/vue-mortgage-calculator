@@ -14,20 +14,20 @@
 </template>
 
 <script setup lang="ts">
-import FoundInterestRates from '@/components/FoundInterestRates.vue'
-import PageIntro from '@/components/PageIntro.vue'
-import RefinanceFormSection from '@/components/RefinanceFormSection.vue'
-import RefinanceInfo from '@/components/RefinanceInfo.vue'
+import FoundInterestRates from '@/components/FoundInterestRates.vue';
+import PageIntro from '@/components/PageIntro.vue';
+import RefinanceFormSection from '@/components/RefinanceFormSection.vue';
+import RefinanceInfo from '@/components/RefinanceInfo.vue';
 // import { useRefinanceStore } from '@/stores/refinance'
 // import { storeToRefs } from 'pinia'
-import { ref } from 'vue'
+import { ref } from 'vue';
 
-const date = new Date()
-const currentYear = ref<number>(date.getFullYear())
+const date = new Date();
+const currentYear = ref<number>(date.getFullYear());
 
-const lowestRate: number = 10.5
-const pageHeaderText: string = 'Калькулятор рефинансирования ипотеки'
-const pageIntroText: string = `Калькулятор рефинансирования ипотеки ${currentYear.value} - самая низкая ставка ${lowestRate}%`
+const lowestRate: number = 10.5;
+const pageHeaderText: string = 'Калькулятор рефинансирования ипотеки';
+const pageIntroText: string = `Калькулятор рефинансирования ипотеки ${currentYear.value} - самая низкая ставка ${lowestRate}%`;
 </script>
 
 <style scoped lang="scss">

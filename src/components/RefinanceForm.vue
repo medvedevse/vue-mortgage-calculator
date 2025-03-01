@@ -41,25 +41,25 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent, ref, toRefs, watch } from 'vue'
-import InputComponent from './InputComponent.vue'
-import RangeComponent from './RangeComponent.vue'
-import type { IRefinanceFormEmits, IRefinanceFormProps } from '@/types/componentTypes'
+import { defineComponent, ref, toRefs, watch } from 'vue';
+import InputComponent from './InputComponent.vue';
+import RangeComponent from './RangeComponent.vue';
+import type { IRefinanceFormEmits, IRefinanceFormProps } from '@/types/componentTypes';
 
-defineComponent({ name: 'RefinanceForm' })
+defineComponent({ name: 'RefinanceForm' });
 
-const props = defineProps<IRefinanceFormProps>()
-const { contributionModel, debtModel, dueDateModel } = toRefs(props)
+const props = defineProps<IRefinanceFormProps>();
+const { contributionModel, debtModel, dueDateModel } = toRefs(props);
 
-const debtEmit = ref<number>(0)
-const contributionEmit = ref<number>(0)
-const dueDateEmit = ref<number>(0)
+const debtEmit = ref<number>(0);
+const contributionEmit = ref<number>(0);
+const dueDateEmit = ref<number>(0);
 
-const emits = defineEmits<IRefinanceFormEmits>()
+const emits = defineEmits<IRefinanceFormEmits>();
 
-watch(debtEmit, (newVal) => emits('debtEmit', newVal), { immediate: true })
-watch(contributionEmit, (newVal) => emits('contributionEmit', newVal), { immediate: true })
-watch(dueDateEmit, (newVal) => emits('dueDateEmit', newVal), { immediate: true })
+watch(debtEmit, (newVal) => emits('debtEmit', newVal), { immediate: true });
+watch(contributionEmit, (newVal) => emits('contributionEmit', newVal), { immediate: true });
+watch(dueDateEmit, (newVal) => emits('dueDateEmit', newVal), { immediate: true });
 </script>
 
 <style scoped lang="scss">

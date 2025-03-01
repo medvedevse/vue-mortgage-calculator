@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { IPressButtonProps } from '@/types/componentTypes'
+import type { IPressButtonProps } from '@/types/componentTypes';
 
-const props = defineProps<IPressButtonProps>()
+const props = defineProps<IPressButtonProps>();
 </script>
 
 <template>

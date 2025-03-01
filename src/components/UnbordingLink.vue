@@ -3,12 +3,12 @@
 </template>
 
 <script setup lang="ts">
-import type { IUnbordingLinkProps } from '@/types/componentTypes'
-import { defineComponent } from 'vue'
+import type { IUnbordingLinkProps } from '@/types/componentTypes';
+import { defineComponent } from 'vue';
 
-defineComponent({ name: 'UnbordingLink' })
+defineComponent({ name: 'UnbordingLink' });
 
-defineProps<IUnbordingLinkProps>()
+defineProps<IUnbordingLinkProps>();
 </script>
 
 <style scoped lang="scss"></style>

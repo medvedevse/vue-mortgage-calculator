@@ -1,27 +1,27 @@
 <script setup lang="ts">
-import FooterComponent from '@/components/FooterComponent.vue'
-import FoundInterestRates from '@/components/FoundInterestRates.vue'
-import MortgageForm from '@/components/MortgageForm.vue'
-import MortgageResult from '@/components/MortgageResult.vue'
-import PageIntro from '@/components/PageIntro.vue'
-import TabBar from '@/components/TabBar.vue'
-import UnbordingLink from '@/components/UnbordingLink.vue'
-import { ref } from 'vue'
+import FooterComponent from '@/components/FooterComponent.vue';
+import FoundInterestRates from '@/components/FoundInterestRates.vue';
+import MortgageForm from '@/components/MortgageForm.vue';
+import MortgageResult from '@/components/MortgageResult.vue';
+import PageIntro from '@/components/PageIntro.vue';
+import TabBar from '@/components/TabBar.vue';
+import UnbordingLink from '@/components/UnbordingLink.vue';
+import { ref } from 'vue';
 
-const date = new Date()
-const currentYear = ref<number>(date.getFullYear())
+const date = new Date();
+const currentYear = ref<number>(date.getFullYear());
 
-const pageHeaderText: string = 'Ипотечный калькулятор'
-const pageIntroText: string = `Удобный ипотечный калькулятор - это способ быстро и удобно рассчитать процентную ставку, размер суммы и срок платежа по ипотечному кредиту в ${currentYear.value} году.`
+const pageHeaderText: string = 'Ипотечный калькулятор';
+const pageIntroText: string = `Удобный ипотечный калькулятор - это способ быстро и удобно рассчитать процентную ставку, размер суммы и срок платежа по ипотечному кредиту в ${currentYear.value} году.`;
 const footerText: string =
-	'*Примечание. На платформе выполнен предварительный расчет графика погашения ипотеки. Точный график погашения можно получить в банке после оформления ипотеки.'
+	'*Примечание. На платформе выполнен предварительный расчет графика погашения ипотеки. Точный график погашения можно получить в банке после оформления ипотеки.';
 
-const rateProps = ref<number>(10.5)
-const periodProps = ref<number>(20)
-const propertyPriceProps = ref<number>(4_000_000)
-const paymentProps = ref<number>(30_000)
-const contributionProps = ref<number>(2_500_000)
-const maxPropertyPriceProps = ref<number>(0)
+const rateProps = ref<number>(10.5);
+const periodProps = ref<number>(20);
+const propertyPriceProps = ref<number>(4_000_000);
+const paymentProps = ref<number>(30_000);
+const contributionProps = ref<number>(2_500_000);
+const maxPropertyPriceProps = ref<number>(0);
 </script>
 
 <template>

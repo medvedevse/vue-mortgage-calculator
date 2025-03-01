@@ -17,19 +17,19 @@
 </template>
 
 <script setup lang="ts">
-import type { IRangeComponentEmits, IRangeComponentProps } from '@/types/componentTypes'
-import { defineComponent, ref, toRefs, watch } from 'vue'
+import type { IRangeComponentEmits, IRangeComponentProps } from '@/types/componentTypes';
+import { defineComponent, ref, toRefs, watch } from 'vue';
 
-defineComponent({ name: 'RangeComponent' })
+defineComponent({ name: 'RangeComponent' });
 
-const props = defineProps<IRangeComponentProps>()
-const { modelProps } = toRefs(props)
+const props = defineProps<IRangeComponentProps>();
+const { modelProps } = toRefs(props);
 
-const emits = defineEmits<IRangeComponentEmits>()
+const emits = defineEmits<IRangeComponentEmits>();
 
-const modelValue = ref<number>(modelProps.value)
+const modelValue = ref<number>(modelProps.value);
 
-watch(modelValue, (newValue) => emits('rangeEmit', newValue), { immediate: true })
+watch(modelValue, (newValue) => emits('rangeEmit', newValue), { immediate: true });
 </script>
 
 <style scoped lang="scss">

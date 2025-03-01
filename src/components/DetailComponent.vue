@@ -5,14 +5,14 @@
 </template>
 
 <script setup lang="ts">
-import type { IMortgageDetailProps } from '@/types/componentTypes'
-import { formatNumber } from '@/utils/utils'
-import { defineComponent, toRefs } from 'vue'
+import type { IMortgageDetailProps } from '@/types/componentTypes';
+import { formatNumber } from '@/utils/utils';
+import { defineComponent, toRefs } from 'vue';
 
-defineComponent({ name: 'MortgageDetail' })
+defineComponent({ name: 'MortgageDetail' });
 
-const props = defineProps<IMortgageDetailProps>()
-const { detailValue } = toRefs(props)
+const props = defineProps<IMortgageDetailProps>();
+const { detailValue } = toRefs(props);
 </script>
 
 <style scoped lang="scss">

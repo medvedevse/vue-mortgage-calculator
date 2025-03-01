@@ -23,16 +23,14 @@
 </template>
 
 <script setup lang="ts">
-import { useMortgageStore } from '@/stores/mortgage'
-import { storeToRefs } from 'pinia'
-import { computed, toRefs } from 'vue'
-import DetailComponent from './DetailComponent.vue'
-import type {IMorgageResultProps} from '@/types/componentTypes'
+import { useMortgageStore } from '@/stores/mortgage';
+import { storeToRefs } from 'pinia';
+import { computed, toRefs } from 'vue';
+import DetailComponent from './DetailComponent.vue';
+import type { IMorgageResultProps } from '@/types/componentTypes';
 
-
-
-const { activeTab } = storeToRefs(useMortgageStore())
-const props = defineProps<IMorgageResultProps>()
+const { activeTab } = storeToRefs(useMortgageStore());
+const props = defineProps<IMorgageResultProps>();
 const {
 	rateProps,
 	periodProps,
@@ -40,86 +38,86 @@ const {
 	maxPropertyPriceProps,
 	paymentProps,
 	propertyPriceProps
-} = toRefs(props)
+} = toRefs(props);
 
-const paymentIncomeRatio: number = 0.35
-const taxRate: number = 0.13
-const maxAmountForTaxDeduction: number = 2_000_000
-const maxOverpayment: number = 3_000_000
+const paymentIncomeRatio: number = 0.35;
+const taxRate: number = 0.13;
+const maxAmountForTaxDeduction: number = 2_000_000;
+const maxOverpayment: number = 3_000_000;
 
 const creditAmount = computed<number>(() => {
 	if (activeTab.value === 1) {
-		const res = propertyPriceProps.value - contributionProps.value
-		return Math.round(res) > 0 ? Math.round(res) : 0
+		const res = propertyPriceProps.value - contributionProps.value;
+		return Math.round(res) > 0 ? Math.round(res) : 0;
 	} else if (activeTab.value === 2) {
-		const res = maxPropertyPriceProps.value - contributionProps.value
-		return Math.round(res) > 0 ? Math.round(res) : 0
+		const res = maxPropertyPriceProps.value - contributionProps.value;
+		return Math.round(res) > 0 ? Math.round(res) : 0;
 	}
-	return 0
-})
+	return 0;
+});
 
 const montlyPayment = computed<number>(() => {
 	const res =
 		(creditAmount.value *
 			(rateProps.value / 12 / 100) *
 			(1 + rateProps.value / 12 / 100) ** (periodProps.value * 12)) /
-		((1 + rateProps.value / 12 / 100) ** (periodProps.value * 12) - 1)
-	return Math.round(res) > 0 ? Math.round(res) : 0
-})
+		((1 + rateProps.value / 12 / 100) ** (periodProps.value * 12) - 1);
+	return Math.round(res) > 0 ? Math.round(res) : 0;
+});
 
 const commonPayment = computed<number>(() => {
 	if (activeTab.value === 1) {
-		const res = montlyPayment.value * periodProps.value * 12
-		return Math.round(res) > 0 ? Math.round(res) : 0
+		const res = montlyPayment.value * periodProps.value * 12;
+		return Math.round(res) > 0 ? Math.round(res) : 0;
 	} else if (activeTab.value === 2) {
-		const res = paymentProps.value * periodProps.value * 12
-		return Math.round(res) > 0 ? Math.round(res) : 0
+		const res = paymentProps.value * periodProps.value * 12;
+		return Math.round(res) > 0 ? Math.round(res) : 0;
 	}
-	return 0
-})
+	return 0;
+});
 
 const overpayment = computed<number>(() => {
-	const res = commonPayment.value - creditAmount.value
-	return Math.round(res) > 0 ? Math.round(res) : 0
-})
+	const res = commonPayment.value - creditAmount.value;
+	return Math.round(res) > 0 ? Math.round(res) : 0;
+});
 
 const recommendedIncome = computed<number>(() => {
 	if (activeTab.value === 1) {
-		const res = montlyPayment.value / paymentIncomeRatio
-		return Math.round(res) > 0 ? Math.round(res) : 0
+		const res = montlyPayment.value / paymentIncomeRatio;
+		return Math.round(res) > 0 ? Math.round(res) : 0;
 	} else if (activeTab.value === 2) {
-		const res = paymentProps.value / paymentIncomeRatio
-		return Math.round(res) > 0 ? Math.round(res) : 0
+		const res = paymentProps.value / paymentIncomeRatio;
+		return Math.round(res) > 0 ? Math.round(res) : 0;
 	}
-	return 0
-})
+	return 0;
+});
 
 const taxDeduction = computed<number>(() => {
 	if (activeTab.value === 1) {
 		const propertyAmount =
 			propertyPriceProps.value > maxAmountForTaxDeduction
 				? maxAmountForTaxDeduction
-				: propertyPriceProps.value
+				: propertyPriceProps.value;
 
 		const overpaymentAmount =
-			overpayment.value > maxOverpayment ? maxOverpayment : overpayment.value
-		const res = propertyAmount * taxRate + overpaymentAmount * taxRate
+			overpayment.value > maxOverpayment ? maxOverpayment : overpayment.value;
+		const res = propertyAmount * taxRate + overpaymentAmount * taxRate;
 
-		return Math.round(res) > 0 ? Math.round(res) : 0
+		return Math.round(res) > 0 ? Math.round(res) : 0;
 	} else if (activeTab.value === 2) {
 		const propertyAmount =
 			maxPropertyPriceProps.value > maxAmountForTaxDeduction
 				? maxAmountForTaxDeduction
-				: maxPropertyPriceProps.value
+				: maxPropertyPriceProps.value;
 
 		const overpaymentAmount =
-			overpayment.value > maxOverpayment ? maxOverpayment : overpayment.value
-		const res = propertyAmount * taxRate + overpaymentAmount * taxRate
+			overpayment.value > maxOverpayment ? maxOverpayment : overpayment.value;
+		const res = propertyAmount * taxRate + overpaymentAmount * taxRate;
 
-		return Math.round(res) > 0 ? Math.round(res) : 0
+		return Math.round(res) > 0 ? Math.round(res) : 0;
 	}
-	return 0
-})
+	return 0;
+});
 </script>
 
 <style scoped lang="scss">

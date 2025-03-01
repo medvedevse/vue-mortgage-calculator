@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import UnbordingLink from './UnbordingLink.vue'
+import UnbordingLink from './UnbordingLink.vue';
 </script>
 
 <style scoped lang="scss">

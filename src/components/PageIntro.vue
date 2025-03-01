@@ -4,12 +4,12 @@
 </template>
 
 <script setup lang="ts">
-import type { IPageIntroProps } from '@/types/componentTypes'
-import { defineComponent } from 'vue'
+import type { IPageIntroProps } from '@/types/componentTypes';
+import { defineComponent } from 'vue';
 
-defineComponent({ name: 'PageIntro' })
+defineComponent({ name: 'PageIntro' });
 
-defineProps<IPageIntroProps>()
+defineProps<IPageIntroProps>();
 </script>
 
 <style scoped lang="scss">

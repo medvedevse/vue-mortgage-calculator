@@ -28,30 +28,30 @@
 </template>
 
 <script setup lang="ts">
-import { useRefinanceStore } from '@/stores/refinance'
-import RefinanceForm from './RefinanceForm.vue'
-import { storeToRefs } from 'pinia'
-import { ref, watch } from 'vue'
+import { useRefinanceStore } from '@/stores/refinance';
+import RefinanceForm from './RefinanceForm.vue';
+import { storeToRefs } from 'pinia';
+import { ref, watch } from 'vue';
 
-const refinanceStore = useRefinanceStore()
+const refinanceStore = useRefinanceStore();
 const { debtBalance, currentRate, currentDueDate, debtAmount, newRate, newDueDate } =
-	storeToRefs(refinanceStore)
+	storeToRefs(refinanceStore);
 
-const debtBalanceEmit = ref<number>(2_000_000)
-const currentRateEmit = ref<number>(17.5)
-const currentDueDateEmit = ref<number>(10)
+const debtBalanceEmit = ref<number>(2_000_000);
+const currentRateEmit = ref<number>(17.5);
+const currentDueDateEmit = ref<number>(10);
 
-const debtAmountEmit = ref<number>(2_000_000)
-const newRateEmit = ref<number>(12.5)
-const newDueDateEmit = ref<number>(10)
+const debtAmountEmit = ref<number>(2_000_000);
+const newRateEmit = ref<number>(12.5);
+const newDueDateEmit = ref<number>(10);
 
-watch(debtBalanceEmit, (newVal) => (debtBalance.value = newVal), { immediate: true })
-watch(currentRateEmit, (newVal) => (currentRate.value = newVal), { immediate: true })
-watch(currentDueDateEmit, (newVal) => (currentDueDate.value = newVal), { immediate: true })
+watch(debtBalanceEmit, (newVal) => (debtBalance.value = newVal), { immediate: true });
+watch(currentRateEmit, (newVal) => (currentRate.value = newVal), { immediate: true });
+watch(currentDueDateEmit, (newVal) => (currentDueDate.value = newVal), { immediate: true });
 
-watch(debtAmountEmit, (newVal) => (debtAmount.value = newVal), { immediate: true })
-watch(newRateEmit, (newVal) => (newRate.value = newVal), { immediate: true })
-watch(newDueDateEmit, (newVal) => (newDueDate.value = newVal), { immediate: true })
+watch(debtAmountEmit, (newVal) => (debtAmount.value = newVal), { immediate: true });
+watch(newRateEmit, (newVal) => (newRate.value = newVal), { immediate: true });
+watch(newDueDateEmit, (newVal) => (newDueDate.value = newVal), { immediate: true });
 </script>
 
 <style scoped lang="scss">

@@ -76,51 +76,51 @@
 </template>
 
 <script setup lang="ts">
-import { useMortgageStore } from '@/stores/mortgage'
-import { storeToRefs } from 'pinia'
-import { computed, ref, watch } from 'vue'
-import DownloadSchedule from './DownloadSchedule.vue'
-import RateList from './RateList.vue'
-import InputComponent from './InputComponent.vue'
-import RangeComponent from './RangeComponent.vue'
-import type { IMorgageFormEmits } from '@/types/componentTypes'
+import { useMortgageStore } from '@/stores/mortgage';
+import { storeToRefs } from 'pinia';
+import { computed, ref, watch } from 'vue';
+import DownloadSchedule from './DownloadSchedule.vue';
+import RateList from './RateList.vue';
+import InputComponent from './InputComponent.vue';
+import RangeComponent from './RangeComponent.vue';
+import type { IMorgageFormEmits } from '@/types/componentTypes';
 
-const { activeTab } = storeToRefs(useMortgageStore())
-const emits = defineEmits<IMorgageFormEmits>()
+const { activeTab } = storeToRefs(useMortgageStore());
+const emits = defineEmits<IMorgageFormEmits>();
 
-const montlyPropertyTaxRate: number = 0.1
+const montlyPropertyTaxRate: number = 0.1;
 
-const rate = ref<number>(10.5)
-const period = ref<number>(20)
-const propertyPrice = ref<number>(4_000_000)
-const payment = ref<number>(30_000)
-const contribution = ref<number>(2_500_000)
+const rate = ref<number>(10.5);
+const period = ref<number>(20);
+const propertyPrice = ref<number>(4_000_000);
+const payment = ref<number>(30_000);
+const contribution = ref<number>(2_500_000);
 
 const maxPropertyPrice = computed<number>(() => {
 	const res =
 		(payment.value * ((1 + rate.value / 12 / 100) ** (period.value * 12) - 1)) /
 			((rate.value / 12 / 100) * (1 + rate.value / 12 / 100) ** (period.value * 12)) +
-		contribution.value
-	return Math.round(res) > 0 ? Math.round(res) : 0
-})
+		contribution.value;
+	return Math.round(res) > 0 ? Math.round(res) : 0;
+});
 
 const montlyPropertyTax = computed(() => {
 	if (activeTab.value === 1) {
-		const res = (propertyPrice.value * montlyPropertyTaxRate) / 100 / 12
-		return Math.round(res) > 0 ? Math.round(res) : 0
+		const res = (propertyPrice.value * montlyPropertyTaxRate) / 100 / 12;
+		return Math.round(res) > 0 ? Math.round(res) : 0;
 	} else if (activeTab.value === 2) {
-		const res = (maxPropertyPrice.value * montlyPropertyTaxRate) / 100 / 12
-		return Math.round(res) > 0 ? Math.round(res) : 0
+		const res = (maxPropertyPrice.value * montlyPropertyTaxRate) / 100 / 12;
+		return Math.round(res) > 0 ? Math.round(res) : 0;
 	}
-	return 0
-})
+	return 0;
+});
 
-watch(rate, (newValue) => emits('rate', newValue), { immediate: true })
-watch(period, (newValue) => emits('period', newValue), { immediate: true })
-watch(propertyPrice, (newValue) => emits('propertyPrice', newValue), { immediate: true })
-watch(payment, (newValue) => emits('payment', newValue), { immediate: true })
-watch(contribution, (newValue) => emits('contribution', newValue), { immediate: true })
-watch(maxPropertyPrice, (newValue) => emits('maxPropertyPrice', newValue), { immediate: true })
+watch(rate, (newValue) => emits('rate', newValue), { immediate: true });
+watch(period, (newValue) => emits('period', newValue), { immediate: true });
+watch(propertyPrice, (newValue) => emits('propertyPrice', newValue), { immediate: true });
+watch(payment, (newValue) => emits('payment', newValue), { immediate: true });
+watch(contribution, (newValue) => emits('contribution', newValue), { immediate: true });
+watch(maxPropertyPrice, (newValue) => emits('maxPropertyPrice', newValue), { immediate: true });
 </script>
 
 <style scoped lang="scss">

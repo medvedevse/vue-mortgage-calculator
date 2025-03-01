@@ -21,19 +21,19 @@
 </template>
 
 <script setup lang="ts">
-import { useRefinanceStore } from '@/stores/refinance'
-import DetailComponent from './DetailComponent.vue'
-import { storeToRefs } from 'pinia'
-import AmountDifference from './AmountDifference.vue'
+import { useRefinanceStore } from '@/stores/refinance';
+import DetailComponent from './DetailComponent.vue';
+import { storeToRefs } from 'pinia';
+import AmountDifference from './AmountDifference.vue';
 
-const refinanceStore = useRefinanceStore()
+const refinanceStore = useRefinanceStore();
 const {
 	currentMontlyPayment,
 	newMontlyPayment,
 	currentOverpayment,
 	newOverpayment,
 	montlyPaymentDiff
-} = storeToRefs(refinanceStore)
+} = storeToRefs(refinanceStore);
 </script>
 
 <style scoped lang="scss">

@@ -3,13 +3,13 @@
 </template>
 
 <script setup lang="ts">
-import type { IAmountDifferenceProps } from '@/types/componentTypes'
-import { formatNumber } from '@/utils/utils'
-import { defineComponent } from 'vue'
+import type { IAmountDifferenceProps } from '@/types/componentTypes';
+import { formatNumber } from '@/utils/utils';
+import { defineComponent } from 'vue';
 
-defineComponent({ name: 'AmountDifference' })
+defineComponent({ name: 'AmountDifference' });
 
-defineProps<IAmountDifferenceProps>()
+defineProps<IAmountDifferenceProps>();
 </script>
 
 <style scoped lang="scss">
