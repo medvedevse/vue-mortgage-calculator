@@ -1,0 +1,10 @@
+{
+	"homePrice": 0,
+	"downPayment": 0,
+	"annualInterestRate": 0,
+	"loanTermInYears": 0,
+	"propertyTaxPerMonth": 0,
+	"homeownersInsurance": 0,
+	"pmi": 0,
+	"hoaFees": 0
+}

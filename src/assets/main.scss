@@ -1,0 +1,25 @@
+@use './base.scss';
+
+#app {
+	font-weight: normal;
+}
+
+a,
+.green {
+	text-decoration: none;
+	color: black;
+	transition: 0.2s;
+	padding: 3px;
+	border-radius: 1px;
+}
+
+h1 {
+	font-size: 36px;
+	font-weight: 400;
+}
+
+@media (hover: hover) {
+	a:hover {
+		background-color: aliceblue;
+	}
+}
