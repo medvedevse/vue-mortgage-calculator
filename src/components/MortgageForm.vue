@@ -217,7 +217,6 @@ input[type='range']:hover {
 		border-radius: 20px;
 		padding: 40px;
 		background: white;
-		border-right: none;
 	}
 }
 
