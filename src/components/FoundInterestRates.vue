@@ -58,6 +58,12 @@ import UnbordingLink from './UnbordingLink.vue';
 	margin-bottom: 16px;
 }
 
+@media (max-width: 480px) {
+	.fill-form-text h2 {
+		line-height: 30px;
+	}
+}
+
 @media (max-width: 360px) {
 	.fill-form-text h2 {
 		font-size: 20px;

@@ -20,6 +20,7 @@ defineProps<IPageIntroProps>();
 @media (max-width: 480px) {
 	.intro-title {
 		font-size: 26px;
+		line-height: 34px;
 	}
 }
 
