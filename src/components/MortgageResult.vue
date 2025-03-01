@@ -124,11 +124,22 @@ const taxDeduction = computed<number>(() => {
 .mortgage-description {
 	max-width: 50%;
 	padding-left: 100px;
-	border-left: 1px solid #d6d9e0;
 	font-size: 18px;
 	display: grid;
-	grid-template-columns: repeat(2, 200px);
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 	gap: 20px;
 	text-align: center;
+}
+
+@media (max-width: 1280px) {
+	.mortgage-description {
+		max-width: 100%;
+		border: 1px solid #d6d9e0;
+		border-radius: 20px;
+		padding: 40px;
+		margin-bottom: 20px;
+		background: white;
+		min-height: 304px;
+	}
 }
 </style>

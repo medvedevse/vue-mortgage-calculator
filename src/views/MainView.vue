@@ -102,22 +102,6 @@ section {
 	box-sizing: border-box;
 }
 
-/* .mortgage-form {
-	min-width: 250px;
-	width: 48%;
-} */
-
-.mortgage-description {
-	max-width: 50%;
-	padding-left: 100px;
-	border-left: 1px solid #d6d9e0;
-	font-size: 18px;
-	display: grid;
-	grid-template-columns: repeat(2, 200px);
-	gap: 20px;
-	text-align: center;
-}
-
 input[type='text'] {
 	padding: 24px 16px 8px;
 	height: 50px;
@@ -198,7 +182,7 @@ input[type='range']:hover {
 	justify-content: space-between;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1280px) {
 	.mortgage-section {
 		max-width: 100%;
 		min-width: 300px;
@@ -209,6 +193,14 @@ input[type='range']:hover {
 
 	.wrapper {
 		background: none;
+		gap: 50px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.wrapper {
+		justify-content: center;
+		gap: 30px;
 	}
 }
 

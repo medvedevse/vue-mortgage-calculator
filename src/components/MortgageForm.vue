@@ -126,6 +126,8 @@ watch(maxPropertyPrice, (newValue) => emits('maxPropertyPrice', newValue), { imm
 <style scoped lang="scss">
 .mortgage-form {
 	width: 250px 50%;
+	padding-right: 100px;
+	border-right: 1px solid #d6d9e0;
 }
 
 .price-block {
@@ -209,19 +211,19 @@ input[type='range']:hover {
 	color: cornflowerblue;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1280px) {
 	.mortgage-form {
 		border: 1px solid #d6d9e0;
 		border-radius: 20px;
 		padding: 40px;
-		margin-bottom: 50px;
 		background: white;
+		border-right: none;
 	}
 }
 
 @media (max-width: 768px) {
 	.mortgage-form {
-		width: 100%;
+		max-width: 70%;
 		display: flex;
 		gap: 10px;
 		flex-wrap: wrap;
