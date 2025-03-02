@@ -45,6 +45,8 @@ const debtAmountEmit = ref<number>(2_000_000);
 const newRateEmit = ref<number>(12.5);
 const newDueDateEmit = ref<number>(10);
 
+// console.log(debtBalanceEmit.value);
+
 watch(debtBalanceEmit, (newVal) => (debtBalance.value = newVal), { immediate: true });
 watch(currentRateEmit, (newVal) => (currentRate.value = newVal), { immediate: true });
 watch(currentDueDateEmit, (newVal) => (currentDueDate.value = newVal), { immediate: true });

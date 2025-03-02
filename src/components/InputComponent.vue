@@ -18,7 +18,7 @@ const modelValue = ref<number>(modelProps.value);
 
 const emits = defineEmits<IInputComponentEmits>();
 
-watch(modelProps, (newValue) => modelValue.value = newValue, { immediate: true } )
+watch(modelProps, (newValue) => (modelValue.value = newValue), { immediate: true });
 watch(modelValue, (newValue) => emits('inputEmit', newValue), { immediate: true });
 </script>
 

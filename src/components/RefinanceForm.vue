@@ -51,15 +51,17 @@ defineComponent({ name: 'RefinanceForm' });
 const props = defineProps<IRefinanceFormProps>();
 const { contributionModel, debtModel, dueDateModel } = toRefs(props);
 
-const debtEmit = ref<number>(0);
-const contributionEmit = ref<number>(0);
-const dueDateEmit = ref<number>(0);
+const debtEmit = ref<number | null>();
+const contributionEmit = ref<number | null>();
+const dueDateEmit = ref<number | null>();
 
 const emits = defineEmits<IRefinanceFormEmits>();
 
-watch(debtEmit, (newVal) => emits('debtEmit', newVal), { immediate: true });
-watch(contributionEmit, (newVal) => emits('contributionEmit', newVal), { immediate: true });
-watch(dueDateEmit, (newVal) => emits('dueDateEmit', newVal), { immediate: true });
+watch(debtEmit, (newVal) => newVal != null && emits('debtEmit', newVal), { immediate: true });
+watch(contributionEmit, (newVal) => newVal != null && emits('contributionEmit', newVal), {
+	immediate: true
+});
+watch(dueDateEmit, (newVal) => newVal != null && emits('dueDateEmit', newVal), { immediate: true });
 </script>
 
 <style scoped lang="scss">
