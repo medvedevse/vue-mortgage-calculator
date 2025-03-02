@@ -35,7 +35,7 @@ import UnbordingLink from './UnbordingLink.vue';
 	background: #fbfbfd;
 	color: black;
 	border-radius: 20px;
-	padding: 20px;
+	padding: 20px 40px;
 	margin-bottom: 20px;
 }
 
@@ -59,12 +59,20 @@ import UnbordingLink from './UnbordingLink.vue';
 }
 
 @media (max-width: 480px) {
+	.fill-form-section {
+		padding: 20px 30px;
+	}
+
 	.fill-form-text h2 {
 		line-height: 30px;
 	}
 }
 
 @media (max-width: 360px) {
+	.fill-form-section {
+		padding: 20px;
+	}
+
 	.fill-form-text h2 {
 		font-size: 20px;
 		line-height: 24px;

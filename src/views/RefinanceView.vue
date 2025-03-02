@@ -18,8 +18,6 @@ import FoundInterestRates from '@/components/FoundInterestRates.vue';
 import PageIntro from '@/components/PageIntro.vue';
 import RefinanceFormSection from '@/components/RefinanceFormSection.vue';
 import RefinanceInfo from '@/components/RefinanceInfo.vue';
-// import { useRefinanceStore } from '@/stores/refinance'
-// import { storeToRefs } from 'pinia'
 import { ref } from 'vue';
 
 const date = new Date();
@@ -40,17 +38,10 @@ const pageIntroText: string = `Калькулятор рефинансирова
 }
 
 .refinance-section-wrapper {
-	// background: white;
-	// color: black;
-	// border-radius: 20px;
-	// padding: 30px;
-	// min-height: 310px;
 	margin-bottom: 20px;
-
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	// max-width: 90%;
 	background: white;
 	color: black;
 	border-radius: 20px;
@@ -60,13 +51,8 @@ const pageIntroText: string = `Калькулятор рефинансирова
 }
 
 .wrapper {
-	// max-width: 90%;
 	display: flex;
 	flex-wrap: wrap;
-}
-
-section:not(:last-child) {
-	margin-bottom: 20px;
 }
 
 .price-block {
@@ -81,25 +67,6 @@ section:not(:last-child) {
 	display: block;
 	position: relative;
 	box-sizing: border-box;
-}
-
-.refinance-calculator {
-	min-width: 250px;
-	width: 50%;
-	border-right: 1px solid #d6d9e0;
-}
-
-.refinance-description {
-	font-size: 18px;
-	display: grid;
-	grid-template-columns: repeat(2, 200px);
-	gap: 26px 36px;
-	text-align: center;
-}
-
-.refinance-info-section {
-	display: grid;
-	align-items: center;
 }
 
 input[type='text'] {
@@ -190,16 +157,23 @@ h2 {
 	margin-bottom: 15px;
 }
 
-.amount-difference {
-	grid-column: 1 / 3;
-	padding: 10px;
-	border-radius: 6px;
-	color: #162136;
-	background: #daeeff33;
-	font-size: 16px;
-}
-
 .refinance-form {
 	margin-bottom: 10px;
+}
+
+@media (max-width: 1280px) {
+	.refinance-section-wrapper {
+		max-width: 100%;
+		min-width: 300px;
+		border: none;
+		padding: 0;
+		background: none;
+	}
+
+	.wrapper {
+		justify-content: center;
+		background: none;
+		gap: 30px;
+	}
 }
 </style>

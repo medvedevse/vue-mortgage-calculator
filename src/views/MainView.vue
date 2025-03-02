@@ -77,7 +77,6 @@ const maxPropertyPriceProps = ref<number>(0);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	// max-width: 90%;
 	background: white;
 	color: black;
 	border-radius: 20px;
@@ -192,14 +191,8 @@ input[type='range']:hover {
 	}
 
 	.wrapper {
-		background: none;
-		gap: 50px;
-	}
-}
-
-@media (max-width: 1024px) {
-	.wrapper {
 		justify-content: center;
+		background: none;
 		gap: 30px;
 	}
 }

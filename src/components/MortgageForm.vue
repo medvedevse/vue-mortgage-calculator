@@ -215,7 +215,7 @@ input[type='range']:hover {
 	.mortgage-form {
 		border: 1px solid #d6d9e0;
 		border-radius: 20px;
-		padding: 40px;
+		padding: 40px 80px;
 		background: white;
 	}
 }
@@ -226,17 +226,20 @@ input[type='range']:hover {
 		display: flex;
 		gap: 10px;
 		flex-wrap: wrap;
+		padding: 40px;
 	}
 }
 
 @media (max-width: 480px) {
 	.mortgage-form {
+		padding: 30px;
 		min-width: 300px;
 	}
 }
 
 @media (max-width: 360px) {
 	.mortgage-form {
+		padding: 20px;
 		font-size: 14px;
 	}
 }

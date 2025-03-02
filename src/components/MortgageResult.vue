@@ -137,7 +137,7 @@ const taxDeduction = computed<number>(() => {
 		border: 1px solid #d6d9e0;
 		border-radius: 20px;
 		padding: 40px;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 		background: white;
 		min-height: 304px;
 	}

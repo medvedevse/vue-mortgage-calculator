@@ -1,5 +1,5 @@
 <template>
-	<p>
+	<p class="detail-item">
 		<span :class="detailClass">{{ formatNumber(detailValue) }} &#8381;</span><br />{{ detailName }}
 	</p>
 </template>
@@ -19,5 +19,11 @@ const { detailValue } = toRefs(props);
 .bright {
 	color: royalblue;
 	font-weight: bold;
+}
+
+@media (max-width: 480px) {
+	.detail-item {
+		font-size: 16px;
+	}
 }
 </style>

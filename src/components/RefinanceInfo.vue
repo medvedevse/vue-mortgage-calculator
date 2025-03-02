@@ -43,21 +43,40 @@ const {
 }
 
 .refinance-description {
-	max-width: 50%;
-	padding-left: 100px;
+	padding-left: 70px;
 	font-size: 18px;
 	display: grid;
-	grid-template-columns: repeat(2, 200px);
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	gap: 26px 36px;
 	text-align: center;
 }
 
-.amount-difference {
-	grid-column: 1 / 3;
-	padding: 10px;
-	border-radius: 6px;
-	color: #162136;
-	background: #daeeff33;
-	font-size: 16px;
+@media (max-width: 1280px) {
+	.refinance-description {
+		max-width: 100%;
+		border: 1px solid #d6d9e0;
+		border-radius: 20px;
+		padding: 40px;
+		margin-bottom: 10px;
+		background: white;
+		min-height: 304px;
+	}
+}
+
+@media (max-width: 768px) {
+	.refinance-description {
+		grid-template-columns: repeat(auto-fit, minmax(140px, 160px));
+	}
+}
+
+@media (max-width: 480px) {
+	.refinance-description {
+		gap: 10px;
+		padding: 20px;
+	}
+
+	.refinance-description h3 {
+		font-size: 18px;
+	}
 }
 </style>
