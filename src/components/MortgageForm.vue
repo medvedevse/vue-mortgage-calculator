@@ -233,7 +233,7 @@ input[type='range']:hover {
 @media (max-width: 480px) {
 	.mortgage-form {
 		padding: 30px;
-		min-width: 300px;
+		min-width: 260px;
 	}
 }
 

@@ -45,19 +45,17 @@ export const useMortgageStore = defineStore('mortgage', () => {
 		try {
 			const { data: mortgageData } = await mortgageDataApi.get('/mortgage');
 			responseData.value = mortgageData;
-			console.log(responseData.value);
 			return responseData.value;
 		} catch (err) {
-			console.log(err);
+			if (err instanceof AxiosError) console.error(err.message);
 		}
 	};
 	const postPaymentSchedule = async () => {
 		try {
 			const { data } = await mortgageScheduleApi.post('/process/morgage?detailed=true', mortData);
-			console.log(data);
 			return data;
 		} catch (err) {
-			console.log(err);
+			if (err instanceof AxiosError) console.error(err.message);
 		}
 	};
 	const sortMorgageRates = () => {
@@ -78,12 +76,6 @@ export const useMortgageStore = defineStore('mortgage', () => {
 				item.rate_min_secondary > mortgageRateData.value.rate_min_secondary
 					? mortgageRateData.value.rate_min_secondary
 					: (mortgageRateData.value.rate_min_secondary = item.rate_min_secondary);
-
-				console.log(
-					mortgageRateData.value.rate_min_secondary,
-					mortgageRateData.value.rate_min_new_building,
-					mortgageRateData.value.rate_min_house
-				);
 			}
 		}
 	};
