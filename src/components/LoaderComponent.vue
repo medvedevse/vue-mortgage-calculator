@@ -1,5 +1,5 @@
 <template>
-	<div></div>
+	<div>Компонент загрузки для Таб бара</div>
 </template>
 
 <script setup lang="ts"></script>

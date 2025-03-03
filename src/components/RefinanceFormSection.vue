@@ -60,7 +60,6 @@ watch(newDueDateEmit, (newVal) => (newDueDate.value = newVal), { immediate: true
 
 <style scoped lang="scss">
 .refinance-calculator {
-	background: white;
 	padding: 30px;
 	min-height: 310px;
 	border-right: 1px solid #d6d9e0;
@@ -69,12 +68,14 @@ watch(newDueDateEmit, (newVal) => (newDueDate.value = newVal), { immediate: true
 
 @media (max-width: 1280px) {
 	.refinance-calculator {
+		box-sizing: border-box;
 		display: flex;
 		gap: 20px;
 		border: 1px solid #d6d9e0;
 		border-radius: 20px;
 		padding: 40px;
-		background: white;
+		background: #fbfbfd;
+		box-shadow: rgba(22, 33, 54, 0.55) 0px 1px 8px 0px;
 	}
 }
 

@@ -6,10 +6,12 @@
 		</main>
 	</div>
 	<SpeedInsights />
+	<Analytics />
 </template>
 
 <script setup lang="ts">
 import { SpeedInsights } from '@vercel/speed-insights/nuxt';
+import { Analytics } from '@vercel/analytics/nuxt';
 import HeaderComponent from '@/components/HeaderComponent.vue';
 import { useThemeStore } from '@/stores/theme';
 import { storeToRefs } from 'pinia';

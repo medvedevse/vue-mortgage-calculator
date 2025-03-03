@@ -1,5 +1,5 @@
 <template>
-	<div></div>
+	<div>Компонент ошибки для Таб бара</div>
 </template>
 
 <script setup lang="ts"></script>

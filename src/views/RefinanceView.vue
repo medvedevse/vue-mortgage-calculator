@@ -38,16 +38,18 @@ const pageIntroText: string = `Калькулятор рефинансирова
 }
 
 .refinance-section-wrapper {
+	box-sizing: border-box;
 	margin-bottom: 20px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background: white;
+	background: #fbfbfd;
 	color: black;
 	border-radius: 20px;
 	padding: 30px 50px;
 	min-height: 310px;
 	border: 1px #d6d9e0 solid;
+	box-shadow: rgba(22, 33, 54, 0.55) 0px 1px 8px 0px;
 }
 
 .wrapper {
@@ -168,6 +170,7 @@ h2 {
 		border: none;
 		padding: 0;
 		background: none;
+		box-shadow: none;
 	}
 
 	.wrapper {

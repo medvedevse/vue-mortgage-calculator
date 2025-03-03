@@ -74,15 +74,17 @@ const maxPropertyPriceProps = ref<number>(0);
 }
 
 .mortgage-section {
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background: white;
+	background: #fbfbfd;
 	color: black;
 	border-radius: 20px;
 	padding: 30px 50px;
 	min-height: 310px;
 	border: 1px solid #d6d9e0;
+	box-shadow: rgba(22, 33, 54, 0.55) 0px 1px 8px 0px;
 }
 .wrapper {
 	display: flex;
@@ -188,6 +190,7 @@ input[type='range']:hover {
 		border: none;
 		padding: 0;
 		background: none;
+		box-shadow: none;
 	}
 
 	.wrapper {

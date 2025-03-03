@@ -213,10 +213,12 @@ input[type='range']:hover {
 
 @media (max-width: 1280px) {
 	.mortgage-form {
+		box-sizing: border-box;
 		border: 1px solid #d6d9e0;
 		border-radius: 20px;
 		padding: 40px 80px;
-		background: white;
+		background: #fbfbfd;
+		box-shadow: rgba(22, 33, 54, 0.55) 0px 1px 8px 0px;
 	}
 }
 
