@@ -1,6 +1,10 @@
 <template>
 	<div>
-		<button class="download-button" @click="handleDownloadSchedule">{{ linkText }}</button>
+		<LoaderComponent v-if="downloadScheduleIsLoading" />
+		<div v-else>
+			<button class="download-button" @click="handleDownloadSchedule">{{ linkText }}</button>
+		</div>
+		<ErrorComponent v-if="downloadScheduleIsError" message="Возникла ошибка при загрузке!" />
 	</div>
 </template>
 
@@ -9,16 +13,24 @@ import mortData from '@/stores/scheduleRequestData.json';
 import { useMortgageStore } from '@/stores/mortgage';
 import { ref } from 'vue';
 import type { ILinkComponentProps } from '@/types/componentTypes';
+import { storeToRefs } from 'pinia';
+import LoaderComponent from './LoaderComponent.vue';
+import ErrorComponent from './ErrorComponent.vue';
 
 const mortgageStore = useMortgageStore();
+const { downloadSchedule } = mortgageStore;
+const { activeTab } = storeToRefs(mortgageStore);
+
+const downloadScheduleIsLoading = ref<boolean>(false);
+const downloadScheduleIsError = ref<boolean>(false);
 
 const linkText = ref<string>('Скачать график платежей*');
 
 const props = defineProps<ILinkComponentProps>();
 const handleDownloadSchedule = async () => {
-	if (mortgageStore.activeTab === 1) {
+	if (activeTab.value === 1) {
 		mortData.homePrice = Number(props.propertyPrice);
-	} else if (mortgageStore.activeTab === 2) {
+	} else if (activeTab.value === 2) {
 		mortData.homePrice = Number(props.maxPropertyPrice);
 	}
 	mortData.downPayment = Number(props.contribution);
@@ -27,9 +39,14 @@ const handleDownloadSchedule = async () => {
 	mortData.propertyTaxPerMonth = Number(props.montlyPropertyTax);
 
 	try {
-		await mortgageStore.downloadSchedule();
+		downloadScheduleIsError.value = false;
+		downloadScheduleIsLoading.value = true;
+		await downloadSchedule();
 	} catch (error) {
+		downloadScheduleIsError.value = true;
 		console.error('Ошибка при скачивании:', error);
+	} finally {
+		downloadScheduleIsLoading.value = false;
 	}
 };
 </script>

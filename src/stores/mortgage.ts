@@ -42,13 +42,9 @@ export const useMortgageStore = defineStore('mortgage', () => {
 	};
 
 	const getMortgageData = async () => {
-		try {
-			const { data: mortgageData } = await mortgageDataApi.get('/mortgage');
-			responseData.value = mortgageData;
-			return responseData.value;
-		} catch (err) {
-			if (err instanceof AxiosError) console.error(err.message);
-		}
+		const { data: mortgageData } = await mortgageDataApi.get('/mortgage');
+		responseData.value = mortgageData;
+		return responseData.value;
 	};
 	const postPaymentSchedule = async () => {
 		try {
