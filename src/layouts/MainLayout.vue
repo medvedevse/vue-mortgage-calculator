@@ -5,9 +5,11 @@
 			<slot />
 		</main>
 	</div>
+	<SpeedInsights />
 </template>
 
 <script setup lang="ts">
+import { SpeedInsights } from '@vercel/speed-insights/nuxt';
 import HeaderComponent from '@/components/HeaderComponent.vue';
 import { useThemeStore } from '@/stores/theme';
 import { storeToRefs } from 'pinia';
